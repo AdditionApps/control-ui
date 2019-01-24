@@ -43,6 +43,8 @@
 						return null;
 					case null :
 						return this.asc
+					default:
+						return null;
 				}
 			}
         },

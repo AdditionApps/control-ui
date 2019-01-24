@@ -1,6 +1,5 @@
 <script>
     import axios from 'axios';
-	import { debounce } from 'lodash';
 
 	export default {
 
@@ -67,10 +66,6 @@
                 else if(this.totalKey){
 					return parseInt(data[this.totalKey]);
                 }
-
-                console.warn("You must set a 'total-header' or 'total-key' prop that " +
-                    "corresponds to a header or data key on the response which provides " +
-                    "the total number of resources")
             },
 			getResources(){
 				this.loading = true;

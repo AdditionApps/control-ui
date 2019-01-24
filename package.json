@@ -6,21 +6,22 @@
     "name": "Addition Apps",
     "email": "info@addition.com.au"
   },
-  "main": "dist/ControlUI.umd.js",
-  "module": "dist/ControlUI.common.js",
-  "unpkg": "dist/ControlUI.umd.min.js",
+  "main": "dist/control-ui.umd.js",
+  "module": "dist/control-ui.common.js",
+  "unpkg": "dist/control-ui.umd.min.js",
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "serve": "vue-cli-service serve --target lib src/index.js",
+    "build": "vue-cli-service build --target lib src/index.js",
     "lint": "vue-cli-service lint",
     "test:unit": "vue-cli-service test:unit",
-    "package": "vue-cli-service build --target lib --name ControlUI src/index.js"
+    "package": "vue-cli-service build --target lib --name ControlUI src/index.js",
+    "watch" : "vue-cli-service build --watch --mode production --target lib src/index.js"
   },
   "dependencies": {
-    "vue": "^2.5.21",
     "axios": "^0.18",
-    "lodash": "^4.17.5",
-    "jw-paginate": "^1.0.2"
+    "jw-paginate": "^1.0.2",
+    "lodash.debounce": "^4.0.8",
+    "vue": "^2.5.21"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.3.0",

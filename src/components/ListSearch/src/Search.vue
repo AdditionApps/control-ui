@@ -1,6 +1,10 @@
 <script>
 
-    import { debounce } from 'lodash';
+    import _debounce from 'lodash.debounce';
+
+    const debouncedUpdate = function (e) {
+		this.$emit('update', e.target.value)
+	}
 
 	export default {
 
@@ -16,17 +20,17 @@
 				required: true,
                 type: String
             },
-            debounce: {
+            wait: {
 				type: Number,
                 default: 500
             }
         },
 
-		methods: {
-			updateQuery: debounce((e) => {
-				this.$emit('update', e.target.value)
-			}, this.debounce)
-        },
+        computed: {
+			inputCaptured () {
+				return _debounce(debouncedUpdate, this.wait).bind(this);
+			}
+		},
 
 		render() {
 			return this.$scopedSlots.default({
@@ -34,7 +38,7 @@
 				query: this.query,
 
 				// Action props
-				updateQuery: this.updateQuery
+				inputCaptured: this.inputCaptured
 			})
 		}
 

@@ -31,7 +31,7 @@
 
         computed:{
             paginationLinks(){
-            	return paginate(this.totalItems, this.page, this.perPage, this.maxPages)
+				return paginate(this.totalItems, this.page, this.perPage, this.maxPages)
             },
 			pageTotal(){
 				return Math.ceil(this.totalItems / this.perPage);
