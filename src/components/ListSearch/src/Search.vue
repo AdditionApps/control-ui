@@ -27,7 +27,7 @@
         },
 
         computed: {
-			inputCaptured () {
+			queryUpdated () {
 				return _debounce(debouncedUpdate, this.wait).bind(this);
 			}
 		},
@@ -38,7 +38,15 @@
 				query: this.query,
 
 				// Action props
-				inputCaptured: this.inputCaptured
+				queryUpdated: this.queryUpdated,
+
+				// Binding props
+				searchProps: {
+					value: this.query
+				},
+				searchEvents: {
+					input: this.queryUpdated
+				}
 			})
 		}
 

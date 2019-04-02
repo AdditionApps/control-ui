@@ -18,16 +18,19 @@
 				required: true
             },
 			asc: {
+				required: false,
                 default: 'asc'
             },
             desc: {
+				required: false,
                 default: 'desc'
             }
         },
 
 		computed: {
 			isActive(){
-				return (this.sortAttribute === this.sortingBy) && this.direction !== null;
+				return (this.sortAttribute === this.sortingBy)
+                    && this.direction !== null;
             },
             isAscending(){
 				return this.direction === this.asc;
@@ -42,7 +45,7 @@
 					case this.desc :
 						return null;
 					case null :
-						return this.asc
+						return this.asc;
 					default:
 						return null;
 				}
@@ -56,13 +59,22 @@
         },
 
 		methods: {
-            setSorting(){
+			setSorting(){
 				this.$emit('update-attribute', this.sortAttribute);
 				this.$emit('update-direction', this.nextDirection);
 				this.$nextTick(() => {
 					this.direction = this.nextDirection;
-                });
-            },
+				});
+			},
+			setSortAttribute(){
+				this.$emit('update-attribute', this.sortAttribute);
+			},
+			setSortDirection(){
+				this.$emit('update-direction', this.nextDirection);
+				this.$nextTick(() => {
+					this.direction = this.nextDirection;
+				});
+			},
         },
 
 		render() {
@@ -74,7 +86,9 @@
                 isDescending: this.isDescending,
 
 				// Action props
-				setSorting: this.setSorting
+				setSorting: this.setSorting,
+				setSortAttribute: this.setSortAttribute,
+				setSortDirection: this.setSortDirection
 			})
 		}
 

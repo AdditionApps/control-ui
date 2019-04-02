@@ -52,10 +52,9 @@
 				paginationLinks: this.paginationLinks,
 
                 // Action props
+				updatePage: this.updatePage,
 				paginationBtnEvents: (number) => ({
-					click: () => {
-						this.updatePage(number)
-					}
+					click: () => this.updatePage(number)
 				}),
 
 				// Binding props
