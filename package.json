@@ -19,10 +19,11 @@
   },
   "dependencies": {
     "axios": "^0.18",
+    "element-resize-detector": "^1.1.15",
     "fuse.js": "^3.3.0",
     "jw-paginate": "^1.0.2",
-    "lodash.debounce": "^4.0.8",
     "lodash.clonedeep": "^4.0.8",
+    "lodash.debounce": "^4.0.8",
     "lodash.get": "^4.0.8",
     "vue": "^2.6.10"
   },
@@ -31,12 +32,14 @@
     "@vue/cli-plugin-eslint": "^3.3.0",
     "@vue/cli-plugin-unit-jest": "^3.5.1",
     "@vue/cli-service": "^3.3.0",
-    "@vue/test-utils": "^1.0.0-beta.20",
+    "@vue/test-utils": "^1.0.0-beta.29",
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "^10.0.1",
     "babel-jest": "^23.6.0",
     "eslint": "^5.8.0",
     "eslint-plugin-vue": "^5.0.0",
+    "mocha": "^6.0.2",
+    "mocha-webpack": "^1.1.0",
     "vue-template-compiler": "^2.5.21"
   },
   "files": [
